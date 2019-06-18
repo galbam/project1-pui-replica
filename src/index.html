@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Fingers Dance</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+     <div id="game-songs">
+
+     </div>
+     <div id="game-dance-floor">
+
+     </div>
+     <div id="game-panel-points" class="d-flex align-items-center">
+          <div class="score-board container p-2 row d-flex flex-column text-center">
+               <div class="good col">
+                    <img src="../assets/EVA3.png" alt="">
+                    <h2 id="panel-good" class="border border-success">0</h2>
+               </div>
+               <div class="miss col">
+                    <img src="../assets/EVA1.png" alt="">
+                    <h2 id="panel-miss" class="border border-secondary">0</h2>
+               </div>
+               <div class="bad col">
+                    <img src="../assets/EVA4.png" alt="">
+                    <h2 id="panel-bad" class="border border-danger">0</h2>
+               </div>
+               <div class="points col">
+                    <h1>POINTS</h1>
+                    <h2 id="panel-points" class="border border-white">0</h2>
+               </div>
+          </div>
+     </div>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.sound.min.js"></script>
+     <script src="./p5.play.js"></script>
+     <script src="./constants.js"></script>
+
+     <script src="./arrow.js"></script>
+     <script src="./arrowUpRight.js"></script>
+     <script src="./arrowUpLeft.js"></script>
+     <script src="./arrowDownRight.js"></script>
+     <script src="./arrowDownLeft.js"></script>
+     <script src="./arrowCenter.js"></script>
+     
+     <script src="./goodMessage.js"></script>
+     <script src="./arrowPool.js"></script>
+     <script src="./panel.js"></script>
+     <script src="./player.js"></script>
+     <script src="./game.js"></script>
+     <script src="./main.1.js"></script>
+</body>
+
+</html>
