@@ -9,6 +9,7 @@ let gameGoodScore = 0;
 let gameMissScore = 0;
 let gameGreatScore = 0;
 let gameTotalGreatScore = 0;
+let gameScore = 0;
 
 let keyCenterWasPressed = false;
 let keyDownLeftWasPressed = false;
@@ -33,7 +34,7 @@ var play_sketch1 = function(p) {
    let isReading = false;
    let pistaIndex = 0;
 
-   //let sound;
+   //let sound;   
 
    p.preload = function() {
 
@@ -74,12 +75,20 @@ var play_sketch1 = function(p) {
       //    startReadingSteps();
       // }, 187.5);
 
+
+
+      if(game.sound.isPlaying() == false) {
+         noLoop();
+         //game over
+       } 
+
    }
 
    soundLoaded = function() {
       
-      //game.sound.play();
+      game.sound.play();
    }
+
 
    // startReadingSteps = function() {
 
@@ -255,7 +264,13 @@ var play_sketch1 = function(p) {
       setTimeout(() => {
          cleanMessagesGoodArray();
       }, 500);
+
+      //Score
+      let gameScoreT = p.select("#panel-points");
+      gameScore = gameScore + 100;
+      gameScoreT.html(gameScore);
    }
+
 
    updateMissScore = function() {
 
@@ -401,7 +416,7 @@ var play_sketch1 = function(p) {
 
 
 
-//Play
+//P5
 var play_sketch = new p5(play_sketch1, document.getElementById('game-dance-floor'));
 
 

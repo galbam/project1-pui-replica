@@ -8,7 +8,7 @@ const PANEL_WIDTH = 320;
 const PANEL_HEIGHT = 64;
 
 const GAMESIZE = 2;
-const VELOCITY = 14;  //12
+const VELOCITY = 8.5;  //12
 
 const keyCodeCenter = 101;
 const keyCodeUpLeft = 103;
