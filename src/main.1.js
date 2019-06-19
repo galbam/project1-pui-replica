@@ -59,15 +59,16 @@ var play_sketch1 = function(p) {
       p.background(p.color("black"));
    
       game.draw();
+            
       redrawAll();
-   
+      
       if(!isReading){
-   
+         
          setInterval(readSongLineTimer, 187.5/2)
          //setInterval(readSongLineTimer, 168/2);
          isReading = true;
       }
-
+      
       
       // setTimeout(() => {
       //    startReadingSteps();
@@ -164,7 +165,7 @@ var play_sketch1 = function(p) {
 
             let arrowReceived = a.intersects(game.panel);
             switch(arrowReceived.action){
-               
+
                case "intersection":
                   switch(arrowReceived.type) {
                      case "center":

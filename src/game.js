@@ -2,6 +2,8 @@ class Game{
 
      constructor(){
           this.panel = new Panel(WIDTH, HEIGHT - 200);
+          this.background = new BackgroundFloor();
+          
           //this.arrow = new Arrow(0, 0);
           
           //steps
@@ -12,14 +14,14 @@ class Game{
      }
      
      setup(){
-
-          this.back = play_sketch.loadImage("../assets/space1.png");
+          
+          this.background.setup();
           this.panel.setup();
      }
 
      draw(){
-
-          play_sketch.image(this.back, WIDTH/GAMESIZE - (WIDTH/GAMESIZE/2), 0, WIDTH/GAMESIZE, HEIGHT);
-          this.panel.draw();          
+          
+          this.background.draw();
+          this.panel.draw(); 
      }
 }

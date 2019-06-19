@@ -4,8 +4,8 @@ const HEIGHT = window.innerHeight;
 const ARROW_WIDTH = 64;
 const ARROW_HEIGHT = 64;
 
-const PANEL_WIDTH = 300;
-const PANEL_HEIGHT = 60;
+const PANEL_WIDTH = 320;
+const PANEL_HEIGHT = 64;
 
 const GAMESIZE = 2;
 const VELOCITY = 14;  //12

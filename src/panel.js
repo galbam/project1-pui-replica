@@ -39,7 +39,8 @@ class Panel{
      }
 
      drawRectangle(){
-          play_sketch.fill(255, 255, 255, 10);
+          play_sketch.fill(255, 255, 255, 50);
+          play_sketch.noStroke();
           play_sketch.rect(this.positionX/GAMESIZE - (PANEL_WIDTH/2), this.positionY, PANEL_WIDTH, PANEL_HEIGHT);
      }
 
