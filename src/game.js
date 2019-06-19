@@ -1,7 +1,7 @@
 class Game{
 
      constructor(){
-          this.panel = new Panel(WIDTH/GAMESIZE, 1100);
+          this.panel = new Panel(WIDTH, HEIGHT - 200);
           //this.arrow = new Arrow(0, 0);
           
           //steps

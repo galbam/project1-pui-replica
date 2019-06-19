@@ -1,14 +1,28 @@
-const WIDTH = 2000;
-const HEIGHT = 1400;
+const WIDTH = window.innerWidth;
+const HEIGHT = window.innerHeight;
 
-const ARROW_WIDTH = 120;
-const ARROW_HEIGHT = 120;
+const ARROW_WIDTH = 64;
+const ARROW_HEIGHT = 64;
 
-const PANEL_WIDTH = 600;
-const PANEL_HEIGHT = 120;
+const PANEL_WIDTH = 300;
+const PANEL_HEIGHT = 60;
 
 const GAMESIZE = 2;
 const VELOCITY = 14;  //12
+
+const keyCodeCenter = 101;
+const keyCodeUpLeft = 103;
+const keyCodeUpRight = 105;
+const keyCodeDownLeft = 97;
+const keyCodeDownRight = 99;
+
+var ID = function () {
+     // Math.random should be unique because of its seeding algorithm.
+     // Convert it to base 36 (numbers + letters), and grab the first 9 characters
+     // after the decimal.
+     return Math.random().toString(36).substr(2, 9);
+   };
+
 
 const pista2 = [
 

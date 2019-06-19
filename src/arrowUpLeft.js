@@ -4,11 +4,13 @@ class ArrowUpLeft{
           this.y = 0;
           this.isUsed = false;
           this.velocity = VELOCITY;
+          this.action = "none";
+          this.type = "upleft";
      }
 
      preload(){
 
-          this.arrow_upLeft_sprite = play_sketch.loadSpriteSheet('../assets/TupLeft.png', ARROW_WIDTH, ARROW_WIDTH, 6);
+          this.arrow_upLeft_sprite = play_sketch.loadSpriteSheet('../assets/TupLeft0.png', ARROW_WIDTH, ARROW_WIDTH, 6);
      }
 
      setup(){
@@ -26,6 +28,20 @@ class ArrowUpLeft{
      moveDown(){
           
           this.y += this.velocity;
+     }
+
+     intersects(arrowInPanel){
+
+          let distance = play_sketch.dist(0, arrowInPanel.upLeftY, 0, this.y - ARROW_HEIGHT/2);
+          if(distance <= 60+72 && (distance < 5)){
+
+               this.action = "intersection";
+               return this;
+          }
+          else{
+
+               return "none";
+          }
      }
 
      resetY(){

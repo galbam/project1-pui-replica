@@ -4,11 +4,13 @@ class ArrowCenter{
           this.y = 0;
           this.isUsed = false;
           this.velocity = VELOCITY;
+          this.action = "none";
+          this.type = "center";
      }
 
      preload(){
 
-          this.arrow_center_sprite = play_sketch.loadSpriteSheet('../assets/Tcenter.png', ARROW_WIDTH, ARROW_WIDTH, 6);
+          this.arrow_center_sprite = play_sketch.loadSpriteSheet('../assets/Tcenter0.png', ARROW_WIDTH, ARROW_WIDTH, 6);
      }
 
      setup(){
@@ -29,12 +31,16 @@ class ArrowCenter{
      }
 
      intersects(arrowInPanel){
+
           let distance = play_sketch.dist(0, arrowInPanel.centerY, 0, this.y - ARROW_HEIGHT/2);
-          if(distance <= 60+72){
-               return true;
+          if(distance <= 60+72 && (distance < 5)){
+
+               this.action = "intersection";
+               return this;
           }
-          else {
-               return false;
+          else{
+
+               return "none";
           }
      }
 

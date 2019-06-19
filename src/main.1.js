@@ -6,6 +6,15 @@
 
 const game = new Game();
 let gameGoodScore = 0;
+let gameMissScore = 0;
+let gameGreatScore = 0;
+let gameTotalGreatScore = 0;
+
+let keyCenterWasPressed = false;
+let keyDownLeftWasPressed = false;
+let keyDownRightWasPressed = false;
+let keyUpLeftWasPressed = false;
+let keyUpRightWasPressed = false;
 
 //let sound;
 var play_sketch1 = function(p) {
@@ -17,17 +26,17 @@ var play_sketch1 = function(p) {
    const arrowPool = new ArrowPool();
 
    const objectsToRedraw = [];
-   const messagesToRedraw = [];
+   const messagesGoodToRedraw = [];
+   const messagesMissedToRedraw = [];
+   const messagesGreatToRedraw = [];
 
    let isReading = false;
-
-   let keyUpRightWasPressed = false;
-
    let pistaIndex = 0;
 
    //let sound;
 
-   p.preload = function(){
+   p.preload = function() {
+
       //game.sound = p.loadSound("../assets/CS031.mp3", soundLoaded);
       game.sound = p.loadSound("../assets/CS017.mp3", soundLoaded);
    }
@@ -60,7 +69,7 @@ var play_sketch1 = function(p) {
       }
 
       
-      // setInterval(() => {
+      // setTimeout(() => {
       //    startReadingSteps();
       // }, 187.5);
 
@@ -68,7 +77,7 @@ var play_sketch1 = function(p) {
 
    soundLoaded = function() {
       
-      game.sound.play();
+      //game.sound.play();
    }
 
    // startReadingSteps = function() {
@@ -138,45 +147,98 @@ var play_sketch1 = function(p) {
                }
             });
          }
-
-         //const arrow = arrowPool.getArrow("downright");
-         //objectsToRedraw.push(arrow);
       }
 
       
       pistaIndex++;
 
+
    }
 
-
    redrawAll = function() {
-   
-      // if(objectsToRedraw.length > 20){
-      //    objectsToRedraw.shift();
-      // }
 
       objectsToRedraw.forEach(a => {
          a.draw();
-   
-         //console.log("panel arrow", game.panel.positionY+(ARROW_HEIGHT/2));
-         //console.log("button", a.y);
 
          if (typeof a.intersects === "function") {
 
-            // safe to use the function
-            if(a.intersects(game.panel)){
-               console.log(" - TRUE -");
-            }
-            else{
-               console.log(" - FALSE -");
+            let arrowReceived = a.intersects(game.panel);
+            switch(arrowReceived.action){
+               
+               case "intersection":
+                  switch(arrowReceived.type) {
+                     case "center":
+                        if(keyCenterWasPressed){                        
+                           updateGoodScore();
+                        }
+                        else{                        
+                           updateMissScore();
+                        }
+                        break;
+                     
+                     case "downleft":
+                        if(keyDownLeftWasPressed){                        
+                           updateGoodScore();
+                        }
+                        else{                        
+                           updateMissScore();
+                        }
+                        break;
 
+                     case "downright":
+                        if(keyDownRightWasPressed){                        
+                           updateGoodScore();
+                        }
+                        else{                        
+                           updateMissScore();
+                        }
+                        break;
+
+                     case "upleft":
+                        if(keyUpLeftWasPressed){                        
+                           updateGoodScore();
+                        }
+                        else{                        
+                           updateMissScore();
+                        }
+                        break;
+   
+                     case "upright":
+                        if(keyUpRightWasPressed){                        
+                           updateGoodScore();
+                        }
+                        else{                        
+                           updateMissScore();
+                        }
+                        break;
+
+                     default:
+                        break;
+                  }
+                  break;
+
+               default:
+                  //none
+                  break;
             }
+         }
+
+         if(gameGreatScore >= 10){
+            updateGreatMessage();
          }
 
       });
 
-      messagesToRedraw.forEach(m => {
-         m.draw();
+      messagesGoodToRedraw.forEach(mg => {
+         mg.draw();
+      });
+
+      messagesMissedToRedraw.forEach(mm => {
+         mm.draw();
+      });
+
+      messagesGreatToRedraw.forEach(g => {
+         g.draw();
       });
    }
 
@@ -186,17 +248,60 @@ var play_sketch1 = function(p) {
       gameGoodScore = gameGoodScore + 1;
       goodScore.html(gameGoodScore);
 
-      const good = arrowPool.getArrow("good");
-      messagesToRedraw.push(good);
+      const goodImg = arrowPool.getArrow("good");
+      messagesGoodToRedraw.push(goodImg);
       
       setTimeout(() => {
-         cleanMessagesArray();
+         cleanMessagesGoodArray();
       }, 500);
    }
 
-   cleanMessagesArray = function(){
+   updateMissScore = function() {
 
-      messagesToRedraw.shift();
+      let missScore = p.select("#panel-miss");
+      gameMissScore = gameMissScore + 1;
+      missScore.html(gameMissScore);
+
+      const missImg = arrowPool.getArrow("miss");
+      messagesMissedToRedraw.push(missImg);
+      
+      setTimeout(() => {
+         cleanMessagesMissedArray();
+      }, 300);
+
+      gameGreatScore = 0;
+   }
+
+   updateGreatMessage = function() {
+
+      let greatScore = p.select("#panel-great");
+      gameTotalGreatScore = gameTotalGreatScore + 1;
+      greatScore.html(gameTotalGreatScore);
+
+      const greatImg = arrowPool.getArrow("great");
+      messagesGreatToRedraw.push(greatImg);
+      
+      setTimeout(() => {
+         cleanMessagesGreatArray();
+      }, 800);
+
+      gameGreatScore = 0;
+   }
+
+   //Clear messages
+   cleanMessagesGoodArray = function(){
+
+      messagesGoodToRedraw.shift();
+   }
+
+   cleanMessagesMissedArray = function(){
+
+      messagesMissedToRedraw.shift();
+   }
+
+   cleanMessagesGreatArray = function(){
+
+      messagesGreatToRedraw.shift();
    }
 
    p.keyReleased = function() {
@@ -204,27 +309,36 @@ var play_sketch1 = function(p) {
       if (p.keyCode === 103) {
          //console.log("up left");      
          game.panel.reduceUpLeft();
+
+         keyUpLeftWasPressed = false;
       }
    
       if (p.keyCode === 105) {
          //console.log("up right");
-         game.panel.reduceUpRight();     
+         game.panel.reduceUpRight();
+
          keyUpRightWasPressed = false;
       }
    
       if (p.keyCode === 101) {
          //console.log("center");
          game.panel.reduceCenter();
+
+         keyCenterWasPressed = false;
       }
    
       if (p.keyCode === 97) {
          //console.log("down left");
          game.panel.reduceDownLeft();
+
+         keyDownLeftWasPressed = false;
       }
    
       if (p.keyCode === 99) {
          //console.log("down right");
-         game.panel.reduceDownRight();      
+         game.panel.reduceDownRight(); 
+         
+         keyDownRightWasPressed = false;
       }
    }
    
@@ -232,27 +346,36 @@ var play_sketch1 = function(p) {
       if (p.keyCode === 103) {
          //console.log("up left");      
          game.panel.growUpLeft();
+
+         keyUpLeftWasPressed = true;
       }
    
       if (p.keyCode === 105) {
          //console.log("up right");
-         game.panel.growUpRight();    
+         game.panel.growUpRight();
+
          keyUpRightWasPressed = true;
       }
    
       if (p.keyCode === 101) {
          //console.log("center");
          game.panel.growCenter();
+
+         keyCenterWasPressed = true;
       }
    
       if (p.keyCode === 97) {
          //console.log("down left");
          game.panel.growDownLeft();
+
+         keyDownLeftWasPressed = true;
       }
    
       if (p.keyCode === 99) {
          //console.log("down right");
-         game.panel.growDownRight();      
+         game.panel.growDownRight(); 
+         
+         keyDownRightWasPressed = true;
       }
     }
 
@@ -279,6 +402,8 @@ var play_sketch1 = function(p) {
 
 //Play
 var play_sketch = new p5(play_sketch1, document.getElementById('game-dance-floor'));
+
+
 
 
 // Generates a random color in hexadecimal (ie. #62b9cc)

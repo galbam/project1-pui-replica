@@ -8,6 +8,8 @@ class ArrowPool{
           this.arrowCenter = [];
 
           this.goods = [];
+          this.misses = [];
+          this.greats = [];
 
           this.poolSize = 15;
      }
@@ -85,6 +87,20 @@ class ArrowPool{
                good.setup();
                this.goods.push(good);
           }
+
+          for (let i = 0; i < 2; i++) {
+
+               const miss = new MissMessage();
+               miss.setup();
+               this.misses.push(miss);
+          }
+
+          for (let i = 0; i < 2; i++) {
+
+               const great = new GreatMessage();
+               great.setup();
+               this.greats.push(great);
+          }
      }
 
      getArrow(objectType){
@@ -121,11 +137,25 @@ class ArrowPool{
                     this.goods.push(current);
                     break;
 
+               case "miss":
+                    current = this.misses.shift();
+                    this.misses.push(current);
+                    break;
+
+               case "great":
+                    current = this.misses.shift();
+                    this.greats.push(current);
+                    break;
+
                default:
                     break;
           }
 
-          current.resetY();
+          if (typeof current.resetY === "function") {
+
+               current.resetY();
+          }
+
           return current;
      }
 }
