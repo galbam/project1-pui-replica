@@ -1,9 +1,15 @@
 /*
-
-   Finger dance
-
+   PUI replica
+   a tribute for the PUI game
 */
 
+//-------------------------------------
+
+//TO DISPLAY OBJECTS
+
+let displayGameDanceFloor = true;
+
+//Game objects
 const game = new Game();
 let gameGoodScore = 0;
 let gameMissScore = 0;
@@ -12,16 +18,29 @@ let gameTotalGreatScore = 0;
 let gameScore = 0;
 let pistaIndex = 0;
 
+//KEY EVENTS
 let keyCenterWasPressed = false;
 let keyDownLeftWasPressed = false;
 let keyDownRightWasPressed = false;
 let keyUpLeftWasPressed = false;
 let keyUpRightWasPressed = false;
 
+//MAIN
 const gameOver = new GameOver();
 
-//let sound;
-var play_sketch1 = function(p) {
+
+let gamePanelPointsObj = document.querySelector('#game-panel-points');
+gamePanelPointsObj.style.display = 'none';
+
+
+let gameDanceFloorObj = document.querySelector('#game-dance-floor');
+gameDanceFloorObj.style.display = 'none';
+
+//-------------------------------------
+
+
+//DANCE FLOOR
+let play_sketch_dance_floor = function(p) {
    p.x = WIDTH;
    p.y = HEIGHT;
 
@@ -38,8 +57,8 @@ var play_sketch1 = function(p) {
 
    p.preload = function() {
 
-      //game.sound = p.loadSound("../assets/CS031.mp3", soundLoaded);
-      game.sound = p.loadSound("../assets/CS017.mp3", soundLoaded);
+      //game.sound = p.loadSound(`../assets/CS031.mp3`", soundLoaded);
+      game.sound = p.loadSound(`../assets/${pistaMusic}.mp3`, soundLoaded);
    }
    
    p.setup = function() {
@@ -66,7 +85,7 @@ var play_sketch1 = function(p) {
       
       if(!isReading){
          
-         setInterval(readSongLineTimer, 187.5/2)
+         setInterval(readSongLineTimer, pistaBpm/2)
          //setInterval(readSongLineTimer, 168/2);
          isReading = true;
       }
@@ -86,10 +105,10 @@ var play_sketch1 = function(p) {
 
    readSongLineTimer = function() {
 
-      if(pistaIndex < pista11.length) {
+      if(pistaIndex < getPista().length) {
 
-         if (pista11[pistaIndex].indexOf("X") != -1) {
-            let steps = pista11[pistaIndex];
+         if (getPista()[pistaIndex].indexOf("X") != -1) {
+            let steps = getPista()[pistaIndex];
             let stepsToUseByLine = [];
       
             for (let i = 0; i < steps.length; i++) {
@@ -379,6 +398,11 @@ var play_sketch1 = function(p) {
          
          keyDownRightWasPressed = true;
       }
+
+      if(p.keyCode === 27){
+
+         window.location.href = "index.html";
+      }
     }
 
    centerCanvas = function() {
@@ -395,16 +419,36 @@ var play_sketch1 = function(p) {
    }
 }
 
-
-
-//P5
-var play_sketch = new p5(play_sketch1, document.getElementById('game-dance-floor'));
-
-
-
-
-// Generates a random color in hexadecimal (ie. #62b9cc)
-function generateRandomColor() {
-  return '#'+Math.floor(Math.random()*16777215).toString(16);
+let play_sketch;
+if(displayGameDanceFloor){
+   
+   gamePanelPointsObj.style.display = '';
+   gameDanceFloorObj.style.display = '';
+   
+   //P5
+   play_sketch = new p5(play_sketch_dance_floor, document.getElementById('game-dance-floor'));
 }
 
+
+
+
+
+
+
+// function setup(){
+
+// }
+
+// function draw(){
+
+   
+// }
+
+// function keyPressed() {
+
+//    if (keyCode === 13) {
+//       console.log("ENTER");
+//    }
+
+
+// }

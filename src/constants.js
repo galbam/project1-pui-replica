@@ -1,3 +1,4 @@
+//CONSTANTS
 const WIDTH = window.innerWidth;
 const HEIGHT = window.innerHeight;
 
@@ -16,14 +17,13 @@ const keyCodeUpRight = 105;
 const keyCodeDownLeft = 97;
 const keyCodeDownRight = 99;
 
-var ID = function () {
-     // Math.random should be unique because of its seeding algorithm.
-     // Convert it to base 36 (numbers + letters), and grab the first 9 characters
-     // after the decimal.
-     return Math.random().toString(36).substr(2, 9);
-   };
+//VARIABLES
+//values by default
+let pistaMusic = "CS017";
+let pista = "pista11";
+let pistaBpm = 187.5;
 
-
+//ARRAY OF SONGS
 const pista2 = [
 
      ".....",
@@ -2072,6 +2072,15 @@ const pista11 = [
 
 ];
 
+
+function getPista(){
+     if(pista === "pista11"){
+          return pista11;
+     }
+     else{
+          return pista2;
+     }
+}
 
 // const pista1 = [
 // ".....",

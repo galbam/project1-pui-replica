@@ -5,65 +5,91 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <title>Fingers Dance</title>
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-     <link rel="stylesheet" href="../styles/style.css">
+     <title>PUI replica</title>
 </head>
 
 <body>
+
+     <div id="game-intro">
+
+     </div>
+
      <div id="game-songs">
 
-     </div>
+          <!-- The video -->
+          <video autoplay muted loop id="myVideo">
+               <source src="../assets/Cinematic2.mp4" type="video/mp4">
+               Your browser does not support HTML5 video.
+          </video>
 
-     <div id="game-dance-floor">
+          <div class="container">
+               <div class="d-flex justify-content-center">
+                    <div class="align-self-center">
 
-     </div>
-     
-     <div id="game-panel-points" class="d-flex align-items-center">
-          <div class="score-board row d-flex flex-column justify-content-center text-center">
-               <div class="col">
-                    <img src="../assets/EVA3.png" alt="d-block">
-                    <h2 id="panel-good" class="border border-success">0</h2>
-               </div>
-               <div class="col">
-                    <img src="../assets/EVA1.png" alt="d-block">
-                    <h2 id="panel-miss" class="border border-secondary">0</h2>
-               </div>
-               <div class="col">
-                    <img src="../assets/EVA4.png" alt="d-block">
-                    <h2 id="panel-great" class="border border-danger">0</h2>
-               </div>
-               <div class="col">
-                    <h1>POINTS</h1>
-                    <h2 id="panel-points" class="border border-white">0</h2>
+                         <div id="demo" class="carousel slide" data-ride="carousel">
+                              <ul class="carousel-indicators">
+                                   <li data-target="#demo" value="CS017" data-slide-to="0" class="active"></li>
+                                   <li data-target="#demo" value="CS031" data-slide-to="1"></li>
+                              </ul>
+                              <div class="carousel-inner">
+                                   <div class="carousel-item active ">
+                                        <img src="../assets/EVA1.png" alt="Los Angeles" width="1100" height="500">
+                                        <div class="carousel-caption">
+                                             <h3>Beethoven Virus</h3>
+                                        </div>
+                                   </div>
+                                   <div class="carousel-item">
+                                        <img src="../assets/EVA2.png" alt="Chicago" width="1100" height="500">
+                                        <div class="carousel-caption">
+                                             <h3>Music 2</h3>
+                                        </div>
+                                   </div>
+                              </div>
+                              <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                                   <span class="carousel-control-prev-icon"></span>
+                              </a>
+                              <a class="carousel-control-next" href="#demo" data-slide="next">
+                                   <span class="carousel-control-next-icon"></span>
+                              </a>
+                         </div>
+                    </div>
                </div>
           </div>
+
+          <div class="contentText">
+               <h1 id="song-title">Beethoven Virus</h1>
+               <p id="song-description">Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te
+                    duo, eum cu recteque expetendis neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum
+                    tractatos ei. Id qui nemore latine molestiae, ad mutat oblique delicatissimi pro.</p>
+               <button id="start" class="btn btn-success">Click to play</button>
+          </div>
      </div>
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+     <link rel="stylesheet" href="../styles/style.css">
+
+     <!-- Optional JavaScript -->
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+     crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+     crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+     crossorigin="anonymous"></script>
 
      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.sound.min.js"></script>
      <script src="./p5.play.js"></script>
-     <script src="./constants.js"></script>
 
-     <script src="./arrow.js"></script>
-     <script src="./arrowUpRight.js"></script>
-     <script src="./arrowUpLeft.js"></script>
-     <script src="./arrowDownRight.js"></script>
-     <script src="./arrowDownLeft.js"></script>
-     <script src="./arrowCenter.js"></script>
-     
-     <script src="./gameOver.js"></script>
-     <script src="./goodMessage.js"></script>
-     <script src="./missMessage.js"></script>
-     <script src="./greatMessage.js"></script>
-     <script src="./arrowPool.js"></script>
-     <script src="./backgroundFloor.js"></script>
-     <script src="./panel.js"></script>
-     <script src="./player.js"></script>
-     <script src="./game.js"></script>
-     <script src="./main.1.js"></script>
+     <script src="./constants.js"></script>
+     <script src="./scriptsIntro.js"></script>
 </body>
 
 </html>
