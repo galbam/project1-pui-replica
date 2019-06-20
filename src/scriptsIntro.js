@@ -4,8 +4,6 @@ document.cookie = "pistaMusic=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 document.cookie = "pista=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 document.cookie = "pistaBpm=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
-
-
 let displayGameIntro = true;
 let displayGameSongs = false;
 
@@ -33,8 +31,8 @@ function Intro(){
                cnv = p.createCanvas(x, y);
                centerCanvas();
      
-               logo1 = p.loadImage("../assets/EVA1.png");
-               logo2 = p.loadImage("../assets/EVA2.png");
+               logo1 = p.loadImage("assets/EVA1.png");
+               logo2 = p.loadImage("assets/EVA2.png");
      
                p.textAlign(p.CENTER, p.CENTER);
                p.rectMode(p.CENTER);
@@ -198,7 +196,7 @@ function ListSongs(){
                songTitle.innerText = "Music 2";
                pistaMusic = "CS031";
                pista = "pista2";
-               pistaBpm = 168;
+               pistaBpm = 165;
 
                //cookies
                setCookie("pistaMusic", pistaMusic, 1);

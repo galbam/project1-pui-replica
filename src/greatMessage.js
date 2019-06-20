@@ -8,7 +8,7 @@ class GreatMessage{
 
      setup() {
 
-          this.greatImg = play_sketch.loadImage("../assets/EVA4.png");
+          this.greatImg = play_sketch.loadImage("assets/EVA4.png");
      }
 
      draw() {

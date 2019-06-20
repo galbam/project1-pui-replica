@@ -14,23 +14,23 @@ class Arrow{
           // switch (this.index) {
           //      case "center":
           //           // specify width and height of each frame and number of frames
-          let arrow_center_sprite = loadSpriteSheet('../assets/Tcenter.png', 120, 120, 6);
+          let arrow_center_sprite = loadSpriteSheet('assets/Tcenter.png', 120, 120, 6);
           //           break;
           //      case "downleft":
           //           // specify width and height of each frame and number of frames
-          let arrow_downLeft_sprite = loadSpriteSheet('../assets/TdownLeft.png', 120, 120, 6);
+          let arrow_downLeft_sprite = loadSpriteSheet('assets/TdownLeft.png', 120, 120, 6);
           //           break;
           //      case "downright":
           //           // specify width and height of each frame and number of frames
-          let arrow_downRight_sprite = loadSpriteSheet('../assets/TdownRight.png', 120, 120, 6);
+          let arrow_downRight_sprite = loadSpriteSheet('assets/TdownRight.png', 120, 120, 6);
           //           break;
           //      case "upleft":
           //           // specify width and height of each frame and number of frames
-          let arrow_upLeft_sprite = loadSpriteSheet('../assets/TupLeft.png', 120, 120, 6);
+          let arrow_upLeft_sprite = loadSpriteSheet('assets/TupLeft.png', 120, 120, 6);
           //           break;
           //      case "upright":
           //           // specify width and height of each frame and number of frames
-          let arrow_upRight_sprite = loadSpriteSheet('../assets/TupRight.png', 120, 120, 6);
+          let arrow_upRight_sprite = loadSpriteSheet('assets/TupRight.png', 120, 120, 6);
           //           break;
           // }
           
@@ -44,8 +44,6 @@ class Arrow{
 
      setupTest(){
 
-          // let arrow_upRight_sprite = loadSpriteSheet('../assets/TupRight.png', 120, 120, 6);
-          // this.arrow_upRight_animation = loadAnimation(arrow_upRight_sprite);
      }
 
      drawTest(){
@@ -62,31 +60,31 @@ class Arrow{
                     animation(this.arrow_downLeft_animation, this.x, this.y);
 
                     // specify width and height of each frame and number of frames
-                    //arrow_sprite = loadSpriteSheet('../assets/TdownLeft.png', 120, 120, 6);
+                    //arrow_sprite = loadSpriteSheet('assets/TdownLeft.png', 120, 120, 6);
                     break;
                case 1:
                     animation(this.arrow_upLeft_animation, this.x, this.y);
 
                     // specify width and height of each frame and number of frames
-                    //arrow_sprite = loadSpriteSheet('../assets/TupLeft.png', 120, 120, 6);
+                    //arrow_sprite = loadSpriteSheet('assets/TupLeft.png', 120, 120, 6);
                     break;
                case 2:
                     animation(this.arrow_center_animation, this.x, this.y);
 
                     // specify width and height of each frame and number of frames
-                    //arrow_sprite = loadSpriteSheet('../assets/Tcenter.png', 120, 120, 6);
+                    //arrow_sprite = loadSpriteSheet('assets/Tcenter.png', 120, 120, 6);
                     break;
                case 3:
                     animation(this.arrow_upRight_animation, this.x, this.y);
 
                     // specify width and height of each frame and number of frames
-                    //arrow_sprite = loadSpriteSheet('../assets/TupRight.png', 120, 120, 6);
+                    //arrow_sprite = loadSpriteSheet('assets/TupRight.png', 120, 120, 6);
                     break;
                case 4:
                     animation(this.arrow_downRight_animation, this.x, this.y);
 
                     // specify width and height of each frame and number of frames
-                    //arrow_sprite = loadSpriteSheet('../assets/TdownRight.png', 120, 120, 6);
+                    //arrow_sprite = loadSpriteSheet('assets/TdownRight.png', 120, 120, 6);
                     break;
           }
      }

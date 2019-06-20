@@ -17,7 +17,7 @@ let pistaIndex = 0;
 let sound;
 function preload(){
 
-   game.sound = loadSound("../assets/CS017.mp3", soundLoaded);
+   game.sound = loadSound("assets/CS017.mp3", soundLoaded);
 }
 
 function centerCanvas() {

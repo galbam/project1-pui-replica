@@ -25,17 +25,17 @@ class Panel{
 
      setup(){
 
-          this.center = play_sketch.loadImage("../assets/RLcenter.png");
-          this.downLeft = play_sketch.loadImage("../assets/RLdownLeft.png");
-          this.downRight = play_sketch.loadImage("../assets/RLdownRight.png");
-          this.upLeft = play_sketch.loadImage("../assets/RLupLeft.png");
-          this.upRight = play_sketch.loadImage("../assets/RLupRight.png");
+          this.center = play_sketch.loadImage("assets/RLcenter.png");
+          this.downLeft = play_sketch.loadImage("assets/RLdownLeft.png");
+          this.downRight = play_sketch.loadImage("assets/RLdownRight.png");
+          this.upLeft = play_sketch.loadImage("assets/RLupLeft.png");
+          this.upRight = play_sketch.loadImage("assets/RLupRight.png");
 
-          this.centerEb = play_sketch.loadImage("../assets/EBcenter.png");
-          this.downLeftEb = play_sketch.loadImage("../assets/EBdownLeft.png");
-          this.downRightEb = play_sketch.loadImage("../assets/EBdownRight.png");
-          this.upLeftEb = play_sketch.loadImage("../assets/EBupLeft.png");
-          this.upRightEb = play_sketch.loadImage("../assets/EBupRight.png");
+          this.centerEb = play_sketch.loadImage("assets/EBcenter.png");
+          this.downLeftEb = play_sketch.loadImage("assets/EBdownLeft.png");
+          this.downRightEb = play_sketch.loadImage("assets/EBdownRight.png");
+          this.upLeftEb = play_sketch.loadImage("assets/EBupLeft.png");
+          this.upRightEb = play_sketch.loadImage("assets/EBupRight.png");
      }
 
      drawRectangle(){

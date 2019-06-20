@@ -9,7 +9,7 @@ class GameOver{
 
      setup() {
 
-          this.gameOverImg = play_sketch.loadImage("../assets/GameOver.png");
+          this.gameOverImg = play_sketch.loadImage("assets/GameOver.png");
      }
 
      draw() {

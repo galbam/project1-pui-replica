@@ -8,8 +8,7 @@ class BackgroundFloor{
 
      setup(){
 
-          //this.back = play_sketch.loadImage("../assets/space1.png");
-          this.back = play_sketch.loadImage("../assets/disco1.jpeg");
+          this.back = play_sketch.loadImage("assets/disco1.jpeg");
      }
 
      draw(){

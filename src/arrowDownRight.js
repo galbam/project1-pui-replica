@@ -10,7 +10,7 @@ class ArrowDownRight{
 
      preload(){
 
-          this.arrow_downRight_sprite = play_sketch.loadSpriteSheet('../assets/TdownRight0.png', ARROW_WIDTH, ARROW_WIDTH, 6);
+          this.arrow_downRight_sprite = play_sketch.loadSpriteSheet('assets/TdownRight0.png', ARROW_WIDTH, ARROW_WIDTH, 6);
      }
 
      setup(){

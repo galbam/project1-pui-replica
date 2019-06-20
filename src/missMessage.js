@@ -8,7 +8,7 @@ class MissMessage{
 
      setup() {
 
-          this.missImg = play_sketch.loadImage("../assets/EVA1.png");
+          this.missImg = play_sketch.loadImage("assets/EVA1.png");
      }
 
      draw() {

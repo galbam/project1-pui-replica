@@ -8,7 +8,7 @@ class GoodMessage {
 
      setup() {
 
-          this.goodImg = play_sketch.loadImage("../assets/EVA3.png");
+          this.goodImg = play_sketch.loadImage("assets/EVA3.png");
      }
 
      draw() {

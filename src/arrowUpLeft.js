@@ -10,7 +10,7 @@ class ArrowUpLeft{
 
      preload(){
 
-          this.arrow_upLeft_sprite = play_sketch.loadSpriteSheet('../assets/TupLeft0.png', ARROW_WIDTH, ARROW_WIDTH, 6);
+          this.arrow_upLeft_sprite = play_sketch.loadSpriteSheet('assets/TupLeft0.png', ARROW_WIDTH, ARROW_WIDTH, 6);
      }
 
      setup(){

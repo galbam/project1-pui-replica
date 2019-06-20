@@ -38,14 +38,6 @@ gameDanceFloorObj.style.display = 'none';
 
 //-------------------------------------
 
-
-/* *** */
-console.log("***");
-console.log(getCookie("pistaMusic"));
-console.log(getCookie("pista"));
-console.log(getCookie("pistaBpm"));
-
-
 //DANCE FLOOR
 let play_sketch_dance_floor = function(p) {
    p.x = WIDTH;
@@ -64,7 +56,7 @@ let play_sketch_dance_floor = function(p) {
 
    p.preload = function() {
 
-      game.sound = p.loadSound(`../assets/${getCookie("pistaMusic")}.mp3`, soundLoaded);
+      game.sound = p.loadSound(`assets/${getCookie("pistaMusic")}.mp3`, soundLoaded);
    }
    
    p.setup = function() {

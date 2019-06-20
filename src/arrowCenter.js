@@ -10,7 +10,7 @@ class ArrowCenter{
 
      preload(){
 
-          this.arrow_center_sprite = play_sketch.loadSpriteSheet('../assets/Tcenter0.png', ARROW_WIDTH, ARROW_WIDTH, 6);
+          this.arrow_center_sprite = play_sketch.loadSpriteSheet('assets/Tcenter0.png', ARROW_WIDTH, ARROW_WIDTH, 6);
      }
 
      setup(){
