@@ -322,35 +322,35 @@ let play_sketch_dance_floor = function(p) {
 
    p.keyReleased = function() {
 
-      if (p.keyCode === 103) {
+      if (p.keyCode === keyCodeUpLeft) {
          //console.log("up left");      
          game.panel.reduceUpLeft();
 
          keyUpLeftWasPressed = false;
       }
    
-      if (p.keyCode === 105) {
+      if (p.keyCode === keyCodeUpRight) {
          //console.log("up right");
          game.panel.reduceUpRight();
 
          keyUpRightWasPressed = false;
       }
    
-      if (p.keyCode === 101) {
+      if (p.keyCode === keyCodeCenter) {
          //console.log("center");
          game.panel.reduceCenter();
 
          keyCenterWasPressed = false;
       }
    
-      if (p.keyCode === 97) {
+      if (p.keyCode === keyCodeDownLeft) {
          //console.log("down left");
          game.panel.reduceDownLeft();
 
          keyDownLeftWasPressed = false;
       }
    
-      if (p.keyCode === 99) {
+      if (p.keyCode === keyCodeDownRight) {
          //console.log("down right");
          game.panel.reduceDownRight(); 
          
@@ -359,35 +359,35 @@ let play_sketch_dance_floor = function(p) {
    }
    
    p.keyPressed  = function() {
-      if (p.keyCode === 103) {
+      if (p.keyCode === keyCodeUpLeft) {
          //console.log("up left");      
          game.panel.growUpLeft();
 
          keyUpLeftWasPressed = true;
       }
    
-      if (p.keyCode === 105) {
+      if (p.keyCode === keyCodeUpRight) {
          //console.log("up right");
          game.panel.growUpRight();
 
          keyUpRightWasPressed = true;
       }
    
-      if (p.keyCode === 101) {
+      if (p.keyCode === keyCodeCenter) {
          //console.log("center");
          game.panel.growCenter();
 
          keyCenterWasPressed = true;
       }
    
-      if (p.keyCode === 97) {
+      if (p.keyCode === keyCodeDownLeft) {
          //console.log("down left");
          game.panel.growDownLeft();
 
          keyDownLeftWasPressed = true;
       }
    
-      if (p.keyCode === 99) {
+      if (p.keyCode === keyCodeDownRight) {
          //console.log("down right");
          game.panel.growDownRight(); 
          
