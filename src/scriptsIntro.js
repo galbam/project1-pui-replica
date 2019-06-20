@@ -193,7 +193,7 @@ function ListSongs(){
           }
           if(ele.data('slideTo') === 0){
                
-               songTitle.innerText = "Music 2";
+               songTitle.innerText = "Winter";
                pistaMusic = "CS031";
                pista = "pista2";
                pistaBpm = 165;
