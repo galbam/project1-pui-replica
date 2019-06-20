@@ -11,11 +11,11 @@ const PANEL_HEIGHT = 64;
 const GAMESIZE = 2;
 const VELOCITY = 8;
 
-const keyCodeCenter = 101;
-const keyCodeUpLeft = 103;
-const keyCodeUpRight = 105;
-const keyCodeDownLeft = 97;
-const keyCodeDownRight = 99;
+const keyCodeCenter = 83; //101;
+const keyCodeUpLeft = 81; //103;
+const keyCodeUpRight = 69; //105;
+const keyCodeDownLeft = 90; //97;
+const keyCodeDownRight = 67; //99;
 
 //VARIABLES
 //values by default
