@@ -31,11 +31,11 @@ class Panel{
           this.upLeft = play_sketch.loadImage("assets/RLupLeft.png");
           this.upRight = play_sketch.loadImage("assets/RLupRight.png");
 
-          this.centerEb = play_sketch.loadImage("assets/EBcenter.png");
-          this.downLeftEb = play_sketch.loadImage("assets/EBdownLeft.png");
-          this.downRightEb = play_sketch.loadImage("assets/EBdownRight.png");
-          this.upLeftEb = play_sketch.loadImage("assets/EBupLeft.png");
-          this.upRightEb = play_sketch.loadImage("assets/EBupRight.png");
+          this.centerEb = play_sketch.loadImage("assets/EBCenter.png");
+          this.downLeftEb = play_sketch.loadImage("assets/EBDownLeft.png");
+          this.downRightEb = play_sketch.loadImage("assets/EBDownRight.png");
+          this.upLeftEb = play_sketch.loadImage("assets/EBUpLeft.png");
+          this.upRightEb = play_sketch.loadImage("assets/EBUpRight.png");
      }
 
      drawRectangle(){
