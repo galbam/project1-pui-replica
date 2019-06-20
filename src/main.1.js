@@ -10,12 +10,15 @@ let gameMissScore = 0;
 let gameGreatScore = 0;
 let gameTotalGreatScore = 0;
 let gameScore = 0;
+let pistaIndex = 0;
 
 let keyCenterWasPressed = false;
 let keyDownLeftWasPressed = false;
 let keyDownRightWasPressed = false;
 let keyUpLeftWasPressed = false;
 let keyUpRightWasPressed = false;
+
+const gameOver = new GameOver();
 
 //let sound;
 var play_sketch1 = function(p) {
@@ -32,9 +35,6 @@ var play_sketch1 = function(p) {
    const messagesGreatToRedraw = [];
 
    let isReading = false;
-   let pistaIndex = 0;
-
-   //let sound;   
 
    p.preload = function() {
 
@@ -51,6 +51,7 @@ var play_sketch1 = function(p) {
       arrowPool.preload();
       arrowPool.setup();
       game.setup();
+      gameOver.setup();
    }
 
 
@@ -69,17 +70,11 @@ var play_sketch1 = function(p) {
          //setInterval(readSongLineTimer, 168/2);
          isReading = true;
       }
-      
-      
-      // setTimeout(() => {
-      //    startReadingSteps();
-      // }, 187.5);
-
-
 
       if(game.sound.isPlaying() == false) {
-         noLoop();
-         //game over
+
+         gameOver.draw();
+         p.noLoop();
        } 
 
    }
@@ -89,20 +84,9 @@ var play_sketch1 = function(p) {
       game.sound.play();
    }
 
-
-   // startReadingSteps = function() {
-
-   //    if(!isReading){
-   
-   //       setInterval(readSongLineTimer, 187.5/2);
-   //       //setInterval(readSongLineTimer, 168/2);
-   //       isReading = true;
-   //    }
-   // }
-
    readSongLineTimer = function() {
 
-      if(pistaIndex <= pista11.length) {
+      if(pistaIndex < pista11.length) {
 
          if (pista11[pistaIndex].indexOf("X") != -1) {
             let steps = pista11[pistaIndex];
@@ -250,6 +234,7 @@ var play_sketch1 = function(p) {
       messagesGreatToRedraw.forEach(g => {
          g.draw();
       });
+
    }
 
    updateGoodScore = function() {
@@ -269,8 +254,9 @@ var play_sketch1 = function(p) {
       let gameScoreT = p.select("#panel-points");
       gameScore = gameScore + 100;
       gameScoreT.html(gameScore);
-   }
 
+      gameGreatScore++;
+   }
 
    updateMissScore = function() {
 
@@ -406,11 +392,6 @@ var play_sketch1 = function(p) {
    p.windowResized = function() {
 
       centerCanvas();
-   }
-
-   p.mouseClicked = function() {
-
-      //p.noLoop();
    }
 }
 

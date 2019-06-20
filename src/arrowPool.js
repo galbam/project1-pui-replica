@@ -49,9 +49,7 @@ class ArrowPool{
                const arrow = new ArrowCenter();
                arrow.preload();
                this.arrowCenter.push(arrow);
-          }
-
-          
+          }    
      }
 
      setup(){
@@ -143,7 +141,7 @@ class ArrowPool{
                     break;
 
                case "great":
-                    current = this.misses.shift();
+                    current = this.greats.shift();
                     this.greats.push(current);
                     break;
 
