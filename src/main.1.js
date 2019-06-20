@@ -39,6 +39,13 @@ gameDanceFloorObj.style.display = 'none';
 //-------------------------------------
 
 
+/* *** */
+console.log("***");
+console.log(getCookie("pistaMusic"));
+console.log(getCookie("pista"));
+console.log(getCookie("pistaBpm"));
+
+
 //DANCE FLOOR
 let play_sketch_dance_floor = function(p) {
    p.x = WIDTH;
@@ -57,8 +64,7 @@ let play_sketch_dance_floor = function(p) {
 
    p.preload = function() {
 
-      //game.sound = p.loadSound(`../assets/CS031.mp3`", soundLoaded);
-      game.sound = p.loadSound(`../assets/${pistaMusic}.mp3`, soundLoaded);
+      game.sound = p.loadSound(`../assets/${getCookie("pistaMusic")}.mp3`, soundLoaded);
    }
    
    p.setup = function() {
@@ -85,8 +91,7 @@ let play_sketch_dance_floor = function(p) {
       
       if(!isReading){
          
-         setInterval(readSongLineTimer, pistaBpm/2)
-         //setInterval(readSongLineTimer, 168/2);
+         setInterval(readSongLineTimer, getCookie("pistaBpm")/2)
          isReading = true;
       }
 
@@ -162,9 +167,7 @@ let play_sketch_dance_floor = function(p) {
          }
       }
 
-      
       pistaIndex++;
-
 
    }
 
@@ -428,27 +431,3 @@ if(displayGameDanceFloor){
    //P5
    play_sketch = new p5(play_sketch_dance_floor, document.getElementById('game-dance-floor'));
 }
-
-
-
-
-
-
-
-// function setup(){
-
-// }
-
-// function draw(){
-
-   
-// }
-
-// function keyPressed() {
-
-//    if (keyCode === 13) {
-//       console.log("ENTER");
-//    }
-
-
-// }

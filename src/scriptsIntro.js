@@ -1,4 +1,10 @@
 
+//Delete cookies
+document.cookie = "pistaMusic=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+document.cookie = "pista=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+document.cookie = "pistaBpm=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+
 
 let displayGameIntro = true;
 let displayGameSongs = false;
@@ -11,7 +17,7 @@ gameIntroObj.style.display = 'none';
 let gameSongsObj = document.querySelector('#game-songs');
 gameSongsObj.style.display = 'none';
 
-
+//Functions to draw in P5
 function Intro(){
      //INTRO
      let play_sketchIntro = function(p){
@@ -179,11 +185,25 @@ function ListSongs(){
      
                songTitle.innerText = "Beethoven Virus";
                pistaMusic = "CS017"; 
+               pista = "pista11";
+               pistaBpm = 187.5;
+
+               //cookies
+               setCookie("pistaMusic", pistaMusic, 1);
+               setCookie("pista", pista, 1);
+               setCookie("pistaBpm", pistaBpm, 1);
           }
           if(ele.data('slideTo') === 0){
                
                songTitle.innerText = "Music 2";
                pistaMusic = "CS031";
+               pista = "pista2";
+               pistaBpm = 168;
+
+               //cookies
+               setCookie("pistaMusic", pistaMusic, 1);
+               setCookie("pista", pista, 1);
+               setCookie("pistaBpm", pistaBpm, 1);
           }
      });
      
@@ -201,14 +221,18 @@ function ListSongs(){
      }
 }
 
-
+//P5
 function setup(){
 
      Intro();
+
+     //cookies
+     setCookie("pistaMusic", pistaMusic, 1);
+     setCookie("pista", pista, 1);
+     setCookie("pistaBpm", pistaBpm, 1);
 }
 
 function draw(){
 
      ListSongs();   
 }
-
