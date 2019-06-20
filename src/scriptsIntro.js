@@ -21,8 +21,6 @@ function Intro(){
      let play_sketchIntro = function(p){
 
           let logo1;
-          let logo2;
-          let button;
           let cnv;
           let x = window.innerWidth;
           let y = window.innerHeight;
@@ -31,8 +29,7 @@ function Intro(){
                cnv = p.createCanvas(x, y);
                centerCanvas();
      
-               logo1 = p.loadImage("assets/EVA1.png");
-               logo2 = p.loadImage("assets/EVA2.png");
+               logo1 = p.loadImage("assets/logo.png");
      
                p.textAlign(p.CENTER, p.CENTER);
                p.rectMode(p.CENTER);
@@ -112,7 +109,7 @@ function Intro(){
           drawLogo = function(){
                p.push();
                
-               p.image(logo1, x/2 - 100, y/2 - 150, 200, 100);
+               p.image(logo1, x/2 - 300, y/2 - 300, 600, 300);
           
                p.pop();
           }
@@ -217,6 +214,18 @@ function ListSongs(){
      
           gameSongsObj.style.display = '';
      }
+}
+
+
+let introSound;
+function preload() {
+
+     introSound = loadSound(`assets/001.mp3`, introSoundLoaded);
+  }
+
+function introSoundLoaded(){
+
+     introSound.play();
 }
 
 //P5
