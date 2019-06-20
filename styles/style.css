@@ -22,17 +22,18 @@ body {
      background: rgba(0, 0, 0, 0.5);
      color: #f1f1f1;
      width: 100%;
-     padding: 20px;
+     padding: 15px;
 }
 
 #game-panel-points {
      background-color: black;
      color: white;
-     height: 45rem;
+     height: 40em;
+     margin-top: 1rem;
 }
 
 #demo {
-     margin: 50px;
+     margin: 30px;
 }
 
 #panel-good, #panel-miss, #panel-great {
@@ -45,11 +46,10 @@ body {
 
 #game-panel-points img{
      height: 100%;
-     width: 300px;
-     
+     width: 20rem;
 }
 
 #instructions img{
-     height: 32px;
-     width: 32px;
-   }
+     height: 100%;
+     width: 2rem;
+}
