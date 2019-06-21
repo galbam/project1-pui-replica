@@ -5,6 +5,8 @@ It is a little replica of a good game. But in this version you will use your fin
 
 The idea is that following the music you should follow the arrows that start appearing and moving from top to down, and as soon as an arrow arrives to the `5 arrow panel` you should press a key to score. If you don not press the key in the correct time you will receive a `MISS` message but if you press the key in the correct time you will receive a `GOOD` message. If you do 10 consecutive goods without failing, you will receive a `GREAT` message. Notice that the score board will be increasing your points accordingly.
 
+![Live](https://github.com/galbam/project1-pui-replica/blob/master/assets/documentation/liveDemo2.gif)
+
 ## The game
 
 The game has 3 different screens:
