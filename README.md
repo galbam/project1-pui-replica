@@ -17,19 +17,19 @@ The game has 3 different screens:
 
 Is a little game presentation; here you can press `enter` to start.
 
-![alt text](https://github.com/galbam/project1-pui-replica/tree/master/assets/documentation/intro.png)
+![Intro](https://github.com/galbam/project1-pui-replica/master/assets/documentation/intro.png)
 
 ## Song list
 
 Here you can see the available songs (there are only 2 songs for now); and you just need to click on the `Click to play` button to start playing.
 
-![alt text](https://github.com/galbam/project1-pui-replica/tree/master/assets/documentation/songs.png)
+![Songs](https://github.com/galbam/project1-pui-replica/master/assets/documentation/songs.png)
 
 ## Floor dance
 
 It is the actual game where you can start dancing; to do that, please following the Instructions section.
 
-![alt text](https://github.com/galbam/project1-pui-replica/tree/master/assets/documentation/floorDance.png)
+![Dance](https://github.com/galbam/project1-pui-replica/master/assets/documentation/floorDance.png)
 
 ## Play
 
