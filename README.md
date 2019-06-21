@@ -17,7 +17,7 @@ The game has 3 different screens:
 
 Is a little game presentation; here you can press `enter` to start.
 
-![Intro](https://github.com/galbam/project1-pui-replica/master/assets/documentation/intro.png)
+![Intro](https://github.com/galbam/project1-pui-replica/blob/master/assets/documentation/intro.png)
 
 ## Song list
 
